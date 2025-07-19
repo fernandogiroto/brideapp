@@ -36,42 +36,12 @@ Route::get('/reset-password/{token}', function ($token) {
 
 // Access for logged-in users only.
 Route::prefix('v1')->middleware('jwt.auth')->group( function () {
-<<<<<<< HEAD
     Route::post('/me', [AuthController::class, 'me'])->name('me');
     Route::post('/refresh', [AuthController::class, 'refresh'])->name('refresh');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::put('/user-update', [AuthController::class, 'update'])->name('user.update');
 
     // Test
-=======
-    // User routes.
-    Route::post('/me', [AuthController::class, 'me'])
-        ->name('me');
-    Route::post('/refresh', [AuthController::class, 'refresh'])
-        ->name('refresh');
-    Route::post('/logout', [AuthController::class, 'logout'])
-        ->name('logout');
-    Route::put('/user-update', [AuthController::class, 'update'])
-        ->name('user.update');
-
-    // Video routes.
-    Route::get('/videos', [VideoController::class, 'index'])
-        ->name('videos.index');
-    Route::post('/video/upload', [VideoController::class, 'upload'])
-        ->name('video.upload');
-    Route::get('/videos/category/{categoryId}', [VideoController::class, 'videosByCategory'])
-        ->name('videos.category');
-    Route::get('/my-videos', [VideoController::class, 'myVideos'])
-        ->name('my-videos.index');
-    Route::delete('/video/{id}/delete', [VideoController::class, 'destroy'])
-        ->name('video.destroy');
-
-    // Vote route.
-    Route::post('/video/{videoId}/vote', [VoteController::class, 'vote'])
-        ->name('video.vote');
-
-    // Test routes.
->>>>>>> 35d91532053fad25885f5a73c17ecd73aa797c2e
     Route::get('/test', function (Request $request) {
         return response()->json(['message' => 'API is working']);
     })->name('test');
