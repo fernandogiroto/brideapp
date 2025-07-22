@@ -1,23 +1,23 @@
 <template>
     <footer v-if="showLayouts">
-      <div class="footer-item" :class="[{ 'footer-item--active': $route.path === '/page1' }]" @click="$router.push('/page1')">
-        <IconEPassport :color="$route.path === '/page1' ? 'var(--theme-color)' : '#1B4965'" :size="20" stroke-width="2" />
+      <div class="footer-item" @click="$router.push('/page1')">
+        <IconEPassport :color="$route.path === '/page1' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
         <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page1' }]" class="">Vistos</span>
       </div>
-      <div class="footer-item" :class="[{ 'footer-item--active': $route.path === '/page2' }]" @click="$router.push('/page2')">
-        <IconPerspective :color="$route.path === '/page2' ? 'var(--theme-color)' : '#1B4965'" :size="20" stroke-width="2" />
+      <div class="footer-item"  @click="$router.push('/page2')">
+        <IconPerspective :color="$route.path === '/page2' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
         <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page2' }]" class="">Processos</span>
       </div>
-      <div class="footer-item" :class="[{ 'footer-item--active': $route.path === '/' }]" @click="$router.push('/')">
-        <IconHome :color="$route.path === '/' ? 'var(--theme-color)' : '#1B4965'" :size="20" stroke-width="2" />
+      <div class="footer-item" @click="$router.push('/')">
+        <IconHome :color="$route.path === '/' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
         <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/' }]" class="">Inicio</span>
       </div>
-      <div class="footer-item" :class="[{ 'footer-item--active': $route.path === '/page3' }]" @click="$router.push('/page3')">
-        <IconFileDescription :color="$route.path === '/page3' ? 'var(--theme-color)' : '#1B4965'" :size="20" stroke-width="2" />
+      <div class="footer-item" @click="$router.push('/page3')">
+        <IconFileDescription :color="$route.path === '/page3' ? '#1B4965' : '#A1A1AA'":size="20" stroke-width="2" />
         <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page3' }]" class="">Documentos</span>
       </div>
-      <div class="footer-item" :class="[{ 'footer-item--active': $route.path === '/page4' }]" @click="$router.push('/page4')">
-        <IconUser :color="$route.path === '/page4' ? 'var(--theme-color)' : '#1B4965'" :size="20" stroke-width="2" />
+      <div class="footer-item" @click="$router.push('/page4')">
+        <IconUser :color="$route.path === '/page4' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
         <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page4' }]" class="">Perfil</span>
       </div>
     </footer>
@@ -51,17 +51,14 @@
       gap: 5px;
       &__label {
         font-size: 12px;
-        color: var(--text-color);
+        color: #A1A1AA;
         &--active {
           font-size: 12px;
-          color: var(--theme-color);
+          font-weight: 700;
+          color: var(--text-color);
        }
       }
-      &--active {
-        background: var(--secondary-color);
-        padding: 6px 10px;
-        border-radius: 10px;
-      }
+
     }
   }
 
