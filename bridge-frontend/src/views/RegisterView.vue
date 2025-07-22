@@ -13,28 +13,22 @@
       <div>
         <label for="email">Email:</label>
         <input type="email" id="email" v-model="email" required />
-        <div v-if="errors.email" class="error-message">{{ errors.email[0] }}</div>
       </div>
       <div>
         <label for="username">Username:</label>
         <input type="text" id="username" v-model="username" required />
-        <div v-if="errors.username" class="error-message">{{ errors.username[0] }}</div>
       </div>
       <div>
         <label for="password">Password:</label>
         <input type="password" id="password" v-model="password" required />
-        <div v-if="errors.password" class="error-message">{{ errors.password[0] }}</div>
       </div>
       <div>
         <label for="c_password">Confirm Password:</label>
         <input type="password" id="c_password" v-model="c_password" required />
-        <div v-if="errors.c_password" class="error-message">{{ errors.c_password[0] }}</div>
       </div>
       <button type="submit">Register</button>
     </form>
-    <div v-if="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
+
   </div>
 </template>
 
@@ -81,17 +75,6 @@ export default defineComponent({
           this.$router.push({ name: 'Login', query: { message: 'Registration successful!' } })
         }
       } catch (error) {
-        if (error.response && error.response.data) {
-          const { data } = error.response.data
-          if (data.email) this.errors.email = data.email
-          if (data.username) this.errors.username = data.username
-          if (data.password) this.errors.password = data.password
-          if (data.c_password) this.errors.c_password = data.c_password
-
-          this.errorMessage = 'Validation Error. Please check the errors below.'
-        } else {
-          this.errorMessage = 'An unexpected error occurred.'
-        }
         console.error('Error registering:', error)
       }
     },

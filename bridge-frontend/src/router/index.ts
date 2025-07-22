@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import LoginView from '@/views/LoginVue.vue'
-import ForgotPasswordView from '@/views/ForgotPasswordView.vue'
 import ResetPasswordView from '@/views/ResetPasswordView.vue'
 
 import Cookies from 'js-cookie'
@@ -14,7 +13,6 @@ const router = createRouter({
     { path: '/', name: 'home', component: HomeView },
     { path: '/register', name: 'register',component: RegisterView },
     { path: '/login', name: 'login', component: LoginView },
-    { path: '/forgot-password', name: 'forgotPassword',component: ForgotPasswordView },
     { path: '/reset-password', name: 'resetPassword', component: ResetPasswordView},
   ],
 })

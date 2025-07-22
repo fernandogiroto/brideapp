@@ -17,12 +17,8 @@
       </div>
       <button type="submit">Reset</button>
     </form>
-    <div v-if="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
-    <div v-if="successMessage" class="success-message">
-      {{ successMessage }}
-    </div>
+
+
   </div>
 </template>
 
@@ -72,18 +68,7 @@ export default defineComponent({
           }, 2000)
         }
       } catch (error) {
-        if (error.response && error.response.data && error.response.data.error) {
-          if (error.response.data.error === 'Invalid or expired token.') {
-            this.errorMessage = 'The reset token is invalid or has expired.'
-          } else if (error.response.data.error.password) {
-            this.errorMessage = error.response.data.error.password[0]
-          } else {
-            this.errorMessage = 'Failed to reset password.'
-          }
-        } else {
-          this.errorMessage = 'An unexpected error occurred.'
-        }
-        console.error('Error resetting password:', error)
+
       }
     },
   },
