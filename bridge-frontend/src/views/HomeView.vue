@@ -56,6 +56,7 @@
     height: '10px',
     backgroundColor: 'var(--theme-color)'
   };
+  
 
 
 </script>
