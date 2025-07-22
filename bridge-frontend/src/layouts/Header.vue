@@ -1,10 +1,7 @@
 <template>
     <header v-if="showLayouts">
-      <span>Logo</span>
-      <div class="header-menu">
-        <AnimatedPlaceholder width="65px" height="15px" v-for="n in 5" :key="n"></AnimatedPlaceholder>
-      </div>
-      <button @click="logout">LOGOUT</button>
+      <span>BRIDGE</span>
+      <Avatar image="/images/perfil.jpg" shape="circle" @click="logout" />
     </header>
 </template>
 
@@ -13,6 +10,8 @@
 
     import { hiddenLayouts } from '@/utils/globals';
     import { logout } from '@/services/authService';
+
+    import Avatar from 'primevue/avatar';
 
     import AnimatedPlaceholder from '@/components/utils/AnimatedPlaceholder.vue'
 
@@ -31,11 +30,17 @@
     width: 100%;
     height: 50px;
     padding: 20px;
-    border-bottom: 1px solid var(--text-color);
     .header-menu{
       @include mixings.flexbox(row, center, center);
       gap: 20px;
+      &--avatar{
+        border-radius: 50%;
+        width:30px;
+        height:30px;
+        cursor: pointer;
+      }
     }
+
   }
 
 </style>

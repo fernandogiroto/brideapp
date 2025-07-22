@@ -36,14 +36,12 @@ Route::get('/reset-password/{token}', function ($token) {
 
 // Access for logged-in users only.
 Route::prefix('v1')->middleware('jwt.auth')->group( function () {
-<<<<<<< HEAD
     Route::post('/me', [AuthController::class, 'me'])->name('me');
     Route::post('/refresh', [AuthController::class, 'refresh'])->name('refresh');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::put('/user-update', [AuthController::class, 'update'])->name('user.update');
 
     // Test
-=======
     // User routes.
     Route::post('/me', [AuthController::class, 'me'])
         ->name('me');
@@ -71,7 +69,6 @@ Route::prefix('v1')->middleware('jwt.auth')->group( function () {
         ->name('video.vote');
 
     // Test routes.
->>>>>>> 35d91532053fad25885f5a73c17ecd73aa797c2e
     Route::get('/test', function (Request $request) {
         return response()->json(['message' => 'API is working']);
     })->name('test');

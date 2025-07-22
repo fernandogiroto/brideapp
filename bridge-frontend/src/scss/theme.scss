@@ -24,6 +24,7 @@ body {
 }
 
 #app {
+  @include mixings.flexbox(column, initial, initial);
   color: var(--text-color);
   background: var(--theme-color);
   font-family: 'Montserrat', sans-serif;

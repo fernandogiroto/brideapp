@@ -6,7 +6,7 @@ $transparent: transparent;
 
 $colors-palette: (
   neutral-00: #c7c6c6,
-  neutral-10: #c7c6c6,
+  neutral-10: #686868,
   neutral-20: #c7c6c6,
   neutral-30: #c7c6c6,
   neutral-40: #c7c6c6,
@@ -76,23 +76,23 @@ $spacing-values: (
 
 $light: (
   colors: (
-    primary: #319cc1,
-    secondary: #00ff6a,
-    tertiary: #ff7349,
+    primary: #BEE9E8,
+    secondary: #62B6CB,
+    tertiary: #1B4965,
     theme: #ffffff,
-    reverse: #000000,
-    text: #000000,
+    reverse: #ffffff,
+    text: #1B4965,
   ),
 );
 
 $dark: (
   colors: (
-    primary: #319cc1,
-    secondary: #00ff6a,
-    tertiary: #ff7349,
-    theme: #000000,
+    primary: #BEE9E8,
+    secondary: #62B6CB,
+    tertiary: #1B4965,
+    theme: #ffffff,
     reverse: #ffffff,
-    text: #ffffff,
+    text: #1B4965,
   ),
 );
 
