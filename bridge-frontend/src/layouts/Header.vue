@@ -1,7 +1,12 @@
 <template>
     <header v-if="showLayouts">
       <span>BRIDGE</span>
-      <Avatar image="/images/perfil.jpg" shape="circle" @click="logout" />
+      <div class="header-menu--avatar" @click="logout">
+        <IconBell color="var(--neutral-10)" :size="25" stroke-width="2" />
+
+        <IconMenu2 color="var(--neutral-10)" :size="25" stroke-width="2" />
+
+      </div>
     </header>
 </template>
 
@@ -10,10 +15,7 @@
 
     import { hiddenLayouts } from '@/utils/globals';
     import { logout } from '@/services/authService';
-
-    import Avatar from 'primevue/avatar';
-
-    import AnimatedPlaceholder from '@/components/utils/AnimatedPlaceholder.vue'
+    import { IconMenu2,IconBell } from '@tabler/icons-vue';
 
     const { showLayouts } = hiddenLayouts();
 
@@ -34,9 +36,10 @@
       @include mixings.flexbox(row, center, center);
       gap: 20px;
       &--avatar{
-        border-radius: 50%;
-        width:30px;
-        height:30px;
+        @include mixings.flexbox(row, center, center);
+        gap: 5px;
+
+
         cursor: pointer;
       }
     }

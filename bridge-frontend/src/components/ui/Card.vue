@@ -2,8 +2,10 @@
   <div class="card">
     <div class="card-header" v-if="header">
         <div class="card-icon" v-if="headerType=='icon'">
-            <img src="@/assets/icons/passport.png" alt="" width="40" height="40" v-if="headerIcon=='student'">
-            <img src="@/assets/icons/visawork.png" alt="" width="40" height="40" v-if="headerIcon=='work'">
+            <img src="@/assets/icons/passport.png" alt="" width="40" height="40" v-if="headerIcon=='residence'">
+            <img src="@/assets/icons/visa-travel.png" alt="" width="40" height="40" v-if="headerIcon=='travel'">
+            <img src="@/assets/icons/visa-student.png" alt="" width="40" height="40" v-if="headerIcon=='student'">
+            <img src="@/assets/icons/visa-documents.png" alt="" width="40" height="40" v-if="headerIcon=='documents'">
         </div>
         <div class="card-progress" v-if="headerType=='progress'">
            <div class="card-progress__icon">
