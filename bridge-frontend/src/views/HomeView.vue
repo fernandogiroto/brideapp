@@ -1,12 +1,7 @@
 <template>
   <div class="home-page">
-    <!-- Active Services -->
-     <div class="intro">
-      <div class="intro__label">
-        <span class="intro__label--title">Olá Ana Beatriz!</span>
-        <span class="intro__label--subtitle">Confira os serviços disponiveis para voce</span>
-      </div>
-     </div>
+    <Intro title="Olá Ana Beatriz!" subtitle="Confira os serviços disponiveis para voce" />
+    <!-- Actives Services -->
     <Card 
       :background="'var(--tertiary-color)'" 
       :headerType="'progress'"
@@ -28,7 +23,8 @@
         :description="'Solicite seu visto de estudante no Brasil'"
         :headerType="'icon'"
         :headerIcon="'residence'"
-        :headerIconBackground="'#C6D4F1'">
+        :headerIconBackground="'#C6D4F1'"
+        @click="$router.push('/visa-student')">
       </Card>
       <Card 
         :background="'#EDFCF2'" 
@@ -38,8 +34,6 @@
         :headerIcon="'travel'"
         :headerIconBackground="'#D3F8DF'">
       </Card>
-    </div>
-    <div class="services-list">
       <Card 
         :background="'#FEF6EE'" 
         :title="'Visto de Estudante'" 
@@ -56,26 +50,24 @@
         :headerIcon="'documents'"
         :headerIconBackground="'#FEE4E2'">
       </Card>
+      
     </div>
-
   </div>
 </template>
 
 <script lang="ts" setup>
 
   import Card from '@/components/ui/Card.vue';
+  import Intro from '@/components/ui/Intro.vue';
   import ProgressBar from 'primevue/progressbar';
 
-  import { IconFileDescription, IconBell } from '@tabler/icons-vue';
+  import { IconFileDescription } from '@tabler/icons-vue';
 
   const progressbarCustom = {
     '--p-progressbar-value-background': 'var(--secondary-color)',
     height: '10px',
     backgroundColor: 'var(--theme-color)'
   };
-
-
-
 
 </script>
 
@@ -87,34 +79,13 @@
     @include mixings.flexbox(column, initial, center);
     flex: 1;
     gap: 20px;
-    width: 100%;
-    height: 100%;
-    padding: 10px 20px;
   }
 
   .services-list {
-    @include mixings.flexbox(row, center, center);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: 100%;
-  }
-
-  .intro {
-    @include mixings.flexbox(row, space-between, initial);
-    gap: 5px;
-    width: 100%;
-    &__label {
-      @include mixings.flexbox(column, initial, initial);
-      &--title {
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--text-color);
-      }
-      &--subtitle {
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--neutral-10);
-      }
-    }
   }
 
 </style>

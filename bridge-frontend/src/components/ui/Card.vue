@@ -40,11 +40,11 @@
 
 <script setup lang="ts">
 
-  import { IconUserFilled,IconChevronRight } from '@tabler/icons-vue';
+  import { IconChevronRight } from '@tabler/icons-vue';
 
 
   const props = defineProps({
-    header: { type: String, default: true },
+    header: { type: Boolean, default: true },
     headerType: { type: String },
     headerIcon: { type: String },
     headerIconBackground: { type: String },
@@ -117,8 +117,7 @@
             }
         }
         &-content {
-            display: flex;
-            flex-direction: column;
+            @include mixings.flexbox(column, center, initial);
             gap: 0.5rem;
             &__title {
                 font-size: 15px;

@@ -37,6 +37,7 @@ main {
   @include mixings.flexbox(column, initial, initial);
   width: 100%;
   height: 100%;
+  padding: 20px;
   overflow-y: scroll;
   @include mixings.scrollbar-none;
 }

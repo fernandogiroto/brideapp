@@ -1,24 +1,24 @@
 <template>
     <footer v-if="showLayouts">
-      <div class="footer-item" @click="$router.push('/page1')">
-        <IconEPassport :color="$route.path === '/page1' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
-        <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page1' }]" class="">Vistos</span>
+      <div class="footer-item" @click="$router.push('/page')">
+        <IconEPassport :color="$route.path === '/page' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
+        <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page' }]" class="">Vistos</span>
       </div>
-      <div class="footer-item"  @click="$router.push('/page2')">
-        <IconPerspective :color="$route.path === '/page2' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
-        <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page2' }]" class="">Processos</span>
+      <div class="footer-item"  @click="$router.push('/page')">
+        <IconPerspective :color="$route.path === '/page' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
+        <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page' }]" class="">Processos</span>
       </div>
       <div class="footer-item" @click="$router.push('/')">
         <IconHome :color="$route.path === '/' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
         <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/' }]" class="">Inicio</span>
       </div>
-      <div class="footer-item" @click="$router.push('/page3')">
-        <IconFileDescription :color="$route.path === '/page3' ? '#1B4965' : '#A1A1AA'":size="20" stroke-width="2" />
-        <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page3' }]" class="">Documentos</span>
+      <div class="footer-item" @click="$router.push('/page')">
+        <IconFileDescription :color="$route.path === '/page' ? '#1B4965' : '#A1A1AA'":size="20" stroke-width="2" />
+        <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page' }]" class="">Documentos</span>
       </div>
-      <div class="footer-item" @click="$router.push('/page4')">
-        <IconUser :color="$route.path === '/page4' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
-        <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page4' }]" class="">Perfil</span>
+      <div class="footer-item" @click="$router.push('/page')">
+        <IconUser :color="$route.path === '/page' ? '#1B4965' : '#A1A1AA'" :size="20" stroke-width="2" />
+        <span :class="['footer-item__label', { 'footer-item__label--active': $route.path === '/page' }]" class="">Perfil</span>
       </div>
     </footer>
 </template>
@@ -37,15 +37,13 @@
   @use '@/scss/mixings';
   @use '@/scss/variables';
 
-  
-
   footer {
     @include mixings.flexbox(row, space-between, center);
     gap: 15px;
     width: 100%;
     height: 70px;
     padding: 20px;
-    border-top:  1px solid var(--neutral-00);
+    border-top: 1px solid var(--neutral-00);
     .footer-item {
       @include mixings.flexbox(column, center, center);
       gap: 5px;
